@@ -1,0 +1,804 @@
+* {
+    margin: 0;
+    padding: 0;
+    text-decoration: 0;
+    box-sizing: border-box;
+    font-size: 1rem;
+    list-style-type: none;
+  }
+  a:not([class]) {
+    text-decoration-skip-ink: auto;
+  }
+  img,
+picture {
+  max-width: 100%;
+  display: block;
+  line-height: 0;
+}
+body {
+    min-height: 100vh;
+    line-height: 1.3;
+    text-rendering: optimizeSpeed;
+    font-family: 'Epilogue', sans-serif;
+    background: rgb(255, 255, 255);
+ }
+ @media only screen and (max-width: 600px){
+    .container{
+        display: grid;
+        grid-template-columns: repeat(20, 5vw);
+        grid-template-rows: repeat(24, 5vh);
+    }
+    .purple-background {
+        background: rgb(195,20,224);
+        background: linear-gradient(270deg, rgba(195,20,224,1) 10%, rgba(138,40,242,1) 49%, rgba(100,15,179,1) 86%);
+        height: 70vh; /* Full height */
+         width: 50%; /* Show only the right half */
+         border-bottom-right-radius: 100% 50%; /* Apply curved shape only to bottom-right */
+         border-bottom-left-radius: 0; /* No curve on bottom-left */
+         position: absolute;
+         left: 0; /* Align to the right side */
+         grid-row: 1 / 15;
+         grid-column: 1 / 10;
+
+         z-index: 1;
+    }
+    /* Positioning - containers and shapes */
+    .hero-container{
+        background: white;
+        grid-row: 2 / 18;
+        grid-column: 3 / 19;
+        z-index: 2;
+        border-radius: 2rem;
+        display: grid;
+        grid-template-rows: repeat(20, 5%);
+        grid-template-columns: repeat(20, 5%);
+        box-shadow: 2px 2px 1px grey;
+    }
+    .white-bar{
+        grid-row: 1 / 3;
+        grid-column: 5 / 17;
+        background-color: white;
+        z-index: 2;
+        border-radius: 2rem;
+        margin-bottom: 2rem;
+    }
+    .user-box{
+        grid-row: 1 / 4;
+        grid-column: 2 / 20;
+        border-radius: 1.5rem 1.5em 0.5rem 0.5rem;
+        z-index: 1;
+        background: rgb(195,20,224);
+        background: linear-gradient(270deg, rgba(195,20,224,1) 10%, rgba(138,40,242,1) 49%, rgba(100,15,179,1) 86%);  
+        margin-top: 1rem;
+    }
+    .arrow-left {
+        width: 10px;
+        height: 10px;
+        border-top: 2px solid white; /* Top arrow line */
+        border-right: 2px solid white; /* Right arrow line */
+        transform: rotate(225deg);
+        grid-row: 3 / 4;
+        grid-column: 3 / 4;
+        z-index: 3;
+        margin-top: .1rem;
+      }
+      .avatar-box{
+        grid-row: 2 / 4;
+        grid-column: 4 / 7;
+        background-color: blueviolet;
+        z-index: 2;
+        border-radius: 80%;
+        border: solid 0.2rem white;
+        margin: 1rem 0 .5rem 0;
+        overflow: hidden;
+      }
+      .user-name{
+        grid-row: 2 / 3;
+        grid-column: 7 / 15;
+        z-index: 2;
+        display: flex;
+        flex-direction: column;
+        justify-content: end;
+        margin-top: 2.6rem;
+        margin-left: 0.4rem;
+      }
+      .availability{
+        grid-row: 3 / 4;
+        grid-column: 7 / 15;
+        z-index: 2;
+        margin-top: .3rem;
+        margin-left: 0.5rem;
+      }
+      .vertical-dots{
+        grid-row: 3 / 4;
+        grid-column: 18 / 19;
+        z-index: 2;
+        display: flex;
+        flex-direction: column; /* Stack items vertically */
+        justify-content: space-evenly; /* Even spacing between dots */
+        align-items: center; 
+        margin-top: -.5rem;
+        margin-bottom: 1.2rem;
+      }
+      .text-box-1{
+        grid-row: 4 / 6;
+        grid-column: 2 / 15;
+        background-color: #d8d4dd;
+        border-radius: 1rem 1rem 1rem 0.5rem;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        margin-bottom: 0.5rem;
+        margin-top: .5rem;
+      }
+      .text-box-2{
+        grid-row: 6 / 8;
+        grid-column: 2 / 15;
+        background-color: #d8d4dd;
+        border-radius: 1rem 1rem 1rem 0.5rem;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        margin-bottom: 0.5rem;
+      }
+      .dog-img-box-1{
+        grid-row: 8 / 10;
+        grid-column: 9 / 13;
+        background-color: #8e44ad;
+        overflow: hidden;
+        border-radius: .4rem;
+        margin: .4rem .4rem .4rem 0;
+      }
+      .dog-img-box-2{
+        grid-row: 8 / 10;
+        grid-column: 13 / 17;
+        background-color: #8e44ad;
+        overflow: hidden;
+        border-radius: .4rem;
+        margin: .4rem .4rem .4rem 0;
+      }
+      .dog-img-box-3{
+        grid-row: 8 / 10;
+        grid-column: 17 / 21;
+        background-color: #8e44ad;
+        overflow: hidden;
+        border-radius: .4rem;
+        margin: .4rem .4rem .4rem 0;
+      }
+      .text-box-3{
+        grid-row: 10 / 12;
+        grid-column: 9 / 21;
+        background-color: #d8d4dd;
+        border-radius: 1rem 1rem 0.5rem 1rem;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        margin-bottom: 0.5rem;
+      }
+      .text-box-4{
+        grid-row: 12 / 13;
+        grid-column: 12 / 21;
+        background-color: #d8d4dd;
+        border-radius: 1rem 1rem 0.5rem 1rem;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        margin-bottom: 0.5rem;
+      }
+      .text-box-5{
+        grid-row: 13 / 15;
+        grid-column: 2 / 15;
+        background-color: #d8d4dd;
+        border-radius: 1rem 1rem 1rem .3rem;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        
+      }
+      .deal-box-1{
+        grid-row: 15 / 17;
+        grid-column: 2 / 17;
+        background: rgb(195,20,224);
+        background: linear-gradient(270deg, rgba(195,20,224,1) 10%, rgba(138,40,242,1) 49%, rgba(100,15,179,1) 86%); 
+        border-radius: 1rem 1rem 1rem 0.5rem;
+        margin: .6rem 0 .6rem 0;
+        display: grid;
+        grid-template-rows: 100%;
+        grid-template-columns: 20% 50% 30%;
+      }
+      .circle-deal-1{
+        grid-row: 1;
+        grid-column: 1 / 2;
+        background-color: #8e44ad;
+        border: solid .1rem white;
+        border-radius: 70%;
+        margin: 1.1rem .9rem .9rem .9rem;
+      }
+      .walk-duration-1{
+        grid-row: 1;
+        grid-column: 2 / 3;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+      }
+      .walk-price-1{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+      }
+      .deal-box-2{
+        grid-row: 17 / 19;
+        grid-column: 2 / 17;
+        background: rgb(195,20,224);
+        background: linear-gradient(270deg, rgba(195,20,224,1) 10%, rgba(138,40,242,1) 49%, rgba(100,15,179,1) 86%); 
+        border-radius: 1rem 1rem 1rem 0.5rem;
+        margin: .6rem 0 .6rem 0;
+        display: grid;
+        grid-template-rows: 100%;
+        grid-template-columns: 20% 50% 30%;
+      }
+      .circle-deal-2{
+        grid-row: 1;
+        grid-column: 1 / 2;
+        background-color: #8e44ad;
+        border: solid .1rem white;
+        border-radius: 70%;
+        margin: 1.1rem .9rem .9rem .9rem;
+      }
+      .walk-duration-2{
+        grid-row: 1;
+        grid-column: 2 / 3;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+      }
+      .walk-price-2{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+      }
+      .arrow-box{
+        grid-row: 20 / 21;
+        grid-column: 15 / 17;
+        background-color: purple;
+        border-radius: 50%;
+        margin: -1rem 0 1.2rem 0;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+      }
+      .send-text-box{
+        grid-row: 19 / 21;
+        grid-column: 2 / 19;
+        background-color: #d8d4dd;
+        border-radius: 1rem 1rem 1rem .3rem;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        margin: 1rem;
+      }
+      .arrow-right {
+        width: 10px;
+        height: 10px;
+        border-top: 3px solid white; /* Top arrow line */
+        border-right: 3px solid white; /* Right arrow line */
+        transform: rotate(45deg);
+        grid-row: 3 / 4;
+        grid-column: 3 / 4;
+        z-index: 3;
+        margin-top: .1rem;
+      }
+      .booking-container{
+        grid-row: 19 / 25;
+        grid-column: 3 / 19;
+        background-color: rgb(255, 254, 254);
+        display: grid;
+        grid-template-rows: repeat(10, 10%);
+        grid-template-columns: repeat(10, 10%);
+      }
+      .booking-heading{
+        grid-row: 2 / 4;
+        grid-column: 1 / 11;
+        text-align: center;
+        margin: 0 -1rem 0 -1rem
+      }
+      .booking-text{
+        grid-row: 4 / 11;
+        grid-column: 1 / 11;
+        display: flex;
+        flex-direction: column;
+        justify-content: start;
+        align-items: center;
+        text-align: center;
+        margin: 1rem 1rem 0 1rem;
+      }
+      /* Images */
+      #avatar-img{
+        object-fit: contain;
+      }
+      #dog-1{
+        object-fit: cover;
+        width: 100%;
+        height: 100%;
+      }
+      #dog-2{
+        object-fit: cover;
+        width: 100%;
+        height: 100%;
+      }
+      #dog-3{
+        object-fit: cover;
+        width: 100%;
+        height: 100%;
+      }
+      /* Typography */
+      .dot {
+        width: 4px;
+        height: 4px;
+        background-color: white; /* Dot color */
+        border-radius: 50%; /* Make them circular */
+      }
+      .user-name{
+        font-size: 1rem;
+        color: white;
+      }
+      .availability{
+        font-size: 0.8rem;
+        color: white;
+      }
+      #text-1{
+        font-size: 0.9rem;
+        text-align: left;
+        margin-left: 0.2rem;
+        color:#8e44ad;
+      }
+      #text-2{
+        font-size: 0.9rem;
+        text-align: left;
+        margin-left: 0.2rem;
+        color:#8e44ad;
+      }
+      #text-3{
+        font-size: 0.9rem;
+        text-align: left;
+        margin-left: 0.5rem;
+        color: rgb(39, 39, 39);
+      }
+      #text-4{
+        font-size: 0.9rem;
+        text-align: left;
+        margin-left: 0.5rem;
+        color: rgb(39, 39, 39);
+      }
+      #text-5{
+        font-size: 0.9rem;
+        text-align: left;
+        margin-left: 0.2rem;
+        margin-right: .2rem;
+        text-align: left;
+        color:#8e44ad;
+      }
+      .walk-duration-1{
+        color:white;
+      }
+      .walk-duration-2{
+        color:white;
+      }
+      .walk-price-1{
+        color:white;
+        font-size: 1.5rem;
+        margin-right: .5rem;
+      }
+      .walk-price-2{
+        color:white;
+        font-size: 1.5rem;
+        margin-right: .5rem;
+      }
+      #text-6{
+        font-size: 0.9rem;
+        text-align: left;
+        margin-left: 1rem;
+        color: rgb(39, 39, 39);
+      }
+      .booking-heading{
+        font-size: 2.5rem;
+        color: rgb(41, 3, 71);
+      }
+      .booking-text{
+        color: rgb(141, 136, 136);
+      }
+    }
+  @media only screen and (min-width: 1200px){
+      .container{
+        display: grid;
+        grid-template-columns: repeat(20, 5vw);
+        grid-template-rows: repeat(24, 5vh);
+      }
+      .purple-background {
+        background: rgb(195,20,224);
+        background: linear-gradient(350deg, rgba(195,20,224,1) 10%, rgba(138,40,242,1) 49%, rgba(100,15,179,1) 86%);
+        height: 100%; /* Full height */
+        width: 80%; /* Show only the right half */
+        border-bottom-right-radius: 50% 40%; /* Apply curved shape only to bottom-right */
+        border-bottom-left-radius: 50% 40%; /* No curve on bottom-left */
+        grid-row: 1 / 18;
+        grid-column: 1 / 9;
+        z-index: 1;
+        position: relative;
+        left: -6rem;
+      }
+      /* Positioning - containers and shapes */
+      .hero-container{
+      background: white;
+      grid-row: 4 / 19;
+      grid-column: 5 / 9;
+      z-index: 2;
+      border-radius: 2rem;
+      display: grid;
+      grid-template-rows: repeat(20, 5%);
+      grid-template-columns: repeat(20, 5%);
+      box-shadow: 2px 2px 1px grey;
+      margin: 0 1rem 0  1rem;
+      }
+      .white-bar{
+        grid-row: 1 / 3;
+        grid-column: 5 / 17;
+        background-color: white;
+        z-index: 2;
+        border-radius: 2rem;
+        margin-bottom: 2rem;
+      }
+      .user-box{
+          grid-row: 1 / 4;
+          grid-column: 2 / 20;
+          border-radius: 1.5rem 1.5em 0.5rem 0.5rem;
+          z-index: 1;
+          background: rgb(195,20,224);
+          background: linear-gradient(270deg, rgba(195,20,224,1) 10%, rgba(138,40,242,1) 49%, rgba(100,15,179,1) 86%);  
+          margin-top: 1rem;
+      }
+      .arrow-left {
+          width: 10px;
+          height: 10px;
+          border-top: 2px solid white; /* Top arrow line */
+          border-right: 2px solid white; /* Right arrow line */
+          transform: rotate(225deg);
+          grid-row: 3 / 4;
+          grid-column: 3 / 4;
+          z-index: 3;
+          margin-top: .1rem;
+        }
+        .avatar-box{
+          grid-row: 2 / 4;
+          grid-column: 4 / 7;
+          background-color: blueviolet;
+          z-index: 2;
+          border-radius: 80%;
+          border: solid 0.2rem white;
+          margin: 1rem 0 .5rem 0;
+          overflow: hidden;
+        }
+        .user-name{
+          grid-row: 2 / 3;
+          grid-column: 7 / 15;
+          z-index: 2;
+          display: flex;
+          flex-direction: column;
+          justify-content: end;
+          margin-top: 2.6rem;
+          margin-left: 0.4rem;
+        }
+        .availability{
+          grid-row: 3 / 4;
+          grid-column: 7 / 15;
+          z-index: 2;
+          margin-top: .3rem;
+          margin-left: 0.5rem;
+        }
+        .vertical-dots{
+          grid-row: 3 / 4;
+          grid-column: 18 / 19;
+          z-index: 2;
+          display: flex;
+          flex-direction: column; /* Stack items vertically */
+          justify-content: space-evenly; /* Even spacing between dots */
+          align-items: center; 
+          margin-top: -.5rem;
+          margin-bottom: 1.2rem;
+        }
+        .text-box-1{
+          grid-row: 4 / 6;
+          grid-column: 2 / 15;
+          background-color: #d8d4dd;
+          border-radius: 1rem 1rem 1rem 0.5rem;
+          display: flex;
+          flex-direction: column;
+          justify-content: center;
+          margin-bottom: 0.5rem;
+          margin-top: .5rem;
+        }
+        .text-box-2{
+          grid-row: 6 / 8;
+          grid-column: 2 / 15;
+          background-color: #d8d4dd;
+          border-radius: 1rem 1rem 1rem 0.5rem;
+          display: flex;
+          flex-direction: column;
+          justify-content: center;
+          margin-bottom: 0.5rem;
+        }
+        .dog-img-box-1{
+          grid-row: 8 / 10;
+          grid-column: 9 / 13;
+          background-color: #8e44ad;
+          overflow: hidden;
+          border-radius: .4rem;
+          margin: .4rem .4rem .4rem 0;
+        }
+        .dog-img-box-2{
+          grid-row: 8 / 10;
+          grid-column: 13 / 17;
+          background-color: #8e44ad;
+          overflow: hidden;
+          border-radius: .4rem;
+          margin: .4rem .4rem .4rem 0;
+        }
+        .dog-img-box-3{
+          grid-row: 8 / 10;
+          grid-column: 17 / 21;
+          background-color: #8e44ad;
+          overflow: hidden;
+          border-radius: .4rem;
+          margin: .4rem .4rem .4rem 0;
+        }
+        .text-box-3{
+          grid-row: 10 / 12;
+          grid-column: 9 / 21;
+          background-color: #d8d4dd;
+          border-radius: 1rem 1rem 0.5rem 1rem;
+          display: flex;
+          flex-direction: column;
+          justify-content: center;
+          margin-bottom: 0.5rem;
+        }
+        .text-box-4{
+          grid-row: 12 / 13;
+          grid-column: 12 / 21;
+          background-color: #d8d4dd;
+          border-radius: 1rem 1rem 0.5rem 1rem;
+          display: flex;
+          flex-direction: column;
+          justify-content: center;
+          margin-bottom: 0.5rem;
+        }
+        .text-box-5{
+          grid-row: 13 / 15;
+          grid-column: 2 / 15;
+          background-color: #d8d4dd;
+          border-radius: 1rem 1rem 1rem .3rem;
+          display: flex;
+          flex-direction: column;
+          justify-content: center;
+          
+        }
+        .deal-box-1{
+          grid-row: 15 / 17;
+          grid-column: 2 / 17;
+          background: rgb(195,20,224);
+          background: linear-gradient(270deg, rgba(195,20,224,1) 10%, rgba(138,40,242,1) 49%, rgba(100,15,179,1) 86%); 
+          border-radius: 1rem 1rem 1rem 0.5rem;
+          margin: .6rem 0 .6rem 0;
+          display: grid;
+          grid-template-rows: 100%;
+          grid-template-columns: 20% 50% 30%;
+        }
+        .circle-deal-1{
+          grid-row: 1;
+          grid-column: 1 / 2;
+          background-color: #8e44ad;
+          border: solid .1rem white;
+          border-radius: 70%;
+          margin: 1.1rem .9rem .9rem .9rem;
+        }
+        .walk-duration-1{
+          grid-row: 1;
+          grid-column: 2 / 3;
+          display: flex;
+          flex-direction: column;
+          justify-content: center;
+          align-items: center;
+        }
+        .walk-price-1{
+          display: flex;
+          justify-content: center;
+          align-items: center;
+        }
+        .deal-box-2{
+          grid-row: 17 / 19;
+          grid-column: 2 / 17;
+          background: rgb(195,20,224);
+          background: linear-gradient(270deg, rgba(195,20,224,1) 10%, rgba(138,40,242,1) 49%, rgba(100,15,179,1) 86%); 
+          border-radius: 1rem 1rem 1rem 0.5rem;
+          margin: .6rem 0 .6rem 0;
+          display: grid;
+          grid-template-rows: 100%;
+          grid-template-columns: 20% 50% 30%;
+        }
+        .circle-deal-2{
+          grid-row: 1;
+          grid-column: 1 / 2;
+          background-color: #8e44ad;
+          border: solid .1rem white;
+          border-radius: 70%;
+          margin: 1.1rem .9rem .9rem .9rem;
+        }
+        .walk-duration-2{
+          grid-row: 1;
+          grid-column: 2 / 3;
+          display: flex;
+          flex-direction: column;
+          justify-content: center;
+          align-items: center;
+        }
+        .walk-price-2{
+          display: flex;
+          justify-content: center;
+          align-items: center;
+        }
+        .arrow-box{
+          grid-row: 20 / 21;
+          grid-column: 15 / 17;
+          background-color: purple;
+          border-radius: 50%;
+          margin: -1rem 0 1.2rem 0;
+          display: flex;
+          flex-direction: column;
+          justify-content: center;
+          align-items: center;
+        }
+        .send-text-box{
+          grid-row: 19 / 21;
+          grid-column: 2 / 19;
+          background-color: #d8d4dd;
+          border-radius: 1rem 1rem 1rem .3rem;
+          display: flex;
+          flex-direction: column;
+          justify-content: center;
+          margin: 1rem;
+        }
+        .arrow-right {
+          width: 10px;
+          height: 10px;
+          border-top: 3px solid white; /* Top arrow line */
+          border-right: 3px solid white; /* Right arrow line */
+          transform: rotate(45deg);
+          grid-row: 3 / 4;
+          grid-column: 3 / 4;
+          z-index: 3;
+          margin-top: .1rem;
+        }
+        .booking-container{
+          grid-row: 8 / 14;
+          grid-column: 11 / 16;
+          background-color: rgb(255, 254, 254);
+          display: grid;
+          grid-template-rows: repeat(10, 10%);
+          grid-template-columns: repeat(10, 10%);
+        }
+        .booking-heading{
+          grid-row: 2 / 4;
+          grid-column: 1 / 11;
+          text-align: left;
+      
+        }
+        .booking-text{
+          grid-row: 5/ 11;
+          grid-column: 1 / 11;
+          display: flex;
+          flex-direction: column;
+          justify-content: start;
+          align-items: center;
+          text-align: left;
+          line-height: 1.5rem;
+          word-spacing: .3rem;
+        }
+        /* Images */
+        #avatar-img{
+          object-fit: contain;
+        }
+        #dog-1{
+          object-fit: cover;
+          width: 100%;
+          height: 100%;
+        }
+        #dog-2{
+          object-fit: cover;
+          width: 100%;
+          height: 100%;
+        }
+        #dog-3{
+          object-fit: cover;
+          width: 100%;
+          height: 100%;
+        }
+        /* Typography */
+        .dot {
+          width: 4px;
+          height: 4px;
+          background-color: white; /* Dot color */
+          border-radius: 50%; /* Make them circular */
+        }
+        .user-name{
+          font-size: 1rem;
+          color: white;
+        }
+        .availability{
+          font-size: 0.8rem;
+          color: white;
+        }
+        #text-1{
+          font-size: 0.9rem;
+          text-align: left;
+          margin-left: 0.2rem;
+          color:#8e44ad;
+        }
+        #text-2{
+          font-size: 0.9rem;
+          text-align: left;
+          margin-left: 0.2rem;
+          color:#8e44ad;
+        }
+        #text-3{
+          font-size: 0.9rem;
+          text-align: left;
+          margin-left: 0.5rem;
+          color: rgb(39, 39, 39);
+        }
+        #text-4{
+          font-size: 0.9rem;
+          text-align: left;
+          margin-left: 0.5rem;
+          color: rgb(39, 39, 39);
+        }
+        #text-5{
+          font-size: 0.9rem;
+          text-align: left;
+          margin-left: 0.2rem;
+          margin-right: .2rem;
+          text-align: left;
+          color:#8e44ad;
+        }
+        .walk-duration-1{
+          color:white;
+        }
+        .walk-duration-2{
+          color:white;
+        }
+        .walk-price-1{
+          color:white;
+          font-size: 1.5rem;
+          margin-right: .5rem;
+        }
+        .walk-price-2{
+          color:white;
+          font-size: 1.5rem;
+          margin-right: .5rem;
+        }
+        #text-6{
+          font-size: 0.9rem;
+          text-align: left;
+          margin-left: 1rem;
+          color: rgb(39, 39, 39);
+        }
+        .booking-heading{
+          font-size: 3rem;
+          color: rgb(41, 3, 71);
+        }
+        .booking-text{
+          color: rgb(141, 136, 136);
+        }
+  }
+    
